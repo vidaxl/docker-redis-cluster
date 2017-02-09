@@ -21,11 +21,7 @@ RUN gem install redis
 
 RUN apt-get install -y gcc make g++ build-essential libc6-dev tcl git supervisor ruby
 
-ARG redis_version=3.2.7
-
-RUN wget -qO redis.tar.gz http://download.redis.io/releases/redis-${redis_version}.tar.gz \
-    && tar xfz redis.tar.gz -C / \
-    && mv /redis-$redis_version /redis
+RUN git clone -b 4.0-rc1 https://github.com/antirez/redis.git /redis
 
 RUN (cd /redis && make)
 
