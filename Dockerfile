@@ -21,7 +21,7 @@ RUN gem install redis
 
 RUN apt-get install -y gcc make g++ build-essential libc6-dev tcl git supervisor ruby
 
-RUN git clone -b 4.0-rc1 https://github.com/antirez/redis.git /redis
+RUN git clone -b 4.0-rc2 https://github.com/antirez/redis.git /redis
 
 RUN (cd /redis && make)
 
